@@ -1,5 +1,6 @@
 <%@ page import="ua.kiev.prog.form.entity.Person" %>
 <%@ page import="ua.kiev.prog.form.LoginServlet" %>
+<%@ page import="java.util.Arrays" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -9,10 +10,9 @@
 <body>
 
 <p>
+    <br> Person
 ${person1}
-${person1.firstName}
-"
-  System.out.println(); %>
-lyjugtrfd</p>
+    ${s}
+  </p>
 </body>
 </html>

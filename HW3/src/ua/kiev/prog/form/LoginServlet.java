@@ -8,9 +8,6 @@ import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
-/**
- * Created by roman on 24.10.16.
- */
 public class LoginServlet extends javax.servlet.http.HttpServlet {
 Person person;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,13 +30,16 @@ Person person;
                     "<p>Pleace input right data  <a href=\"index.html\">again</a></p>\n" +
                     "</body></html>");
         }
-
     }
+
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         int qw1Yes=0;
         int qw1No=0;
         int qw2Yes=0;
         int qw2No=0;
+        int ans [] = new int[4];
+        HttpSession session = request.getSession(true);
+
         String qw1Answer = request.getParameter("q1");
         if (qw1Answer.equals("yes")) {
             qw1Yes++;
@@ -52,10 +52,16 @@ Person person;
         } else {
             qw2No++;
         }
+        ans[0] = qw1Yes;
+        ans[1] = qw1No;
+        ans[2] = qw2Yes;
+        ans[3] = qw2No;
+        String s = "<br><br> answered on queston 1  YES is: " + qw1Yes + " No: " + qw1No
+                +  "</br>" +  "<br> answered on queston 2  YES is: " + qw2Yes + " No: " + qw2No +  "</br>";
         response.setContentType("text/html;charset=UTF-8");
         request.setAttribute("person1", person);
-        response.sendRedirect("Stat.jsp");
-
-        //response.getWriter().print(person + "/nAnswered for next questions /n 1. Do you like girls? /n answered /n Yes is " + qw1Yes + "/n No is " + qw1No + " " + qw2Yes +qw2No );
+        request.setAttribute("s", s);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("Stat.jsp");
+        dispatcher.forward(request, response);
     }
 }
