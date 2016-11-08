@@ -15,14 +15,14 @@ public class Trains {
     @XmlElement(name = "train")
     ArrayList<Train> trains = new ArrayList<Train>();
 
-    public void add(Train train) {
+    public void addTr(Train train) {
         trains.add(train);
     }
 
     public void printTodayTrains(Trains trains1) throws ParseException {
-        SimpleDateFormat formatterDate = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatterDate = new SimpleDateFormat("dd.MM.yyyy");
         SimpleDateFormat formatterTime = new SimpleDateFormat("hh:mm");
-        Date dateToday = (Date) formatterDate.parse("2013-12-19");
+        Date dateToday = (Date) formatterDate.parse("19.12.2013");
         Date from = (Date) formatterTime.parse("15:00");
         Date to = (Date) formatterTime.parse("19:00");
 

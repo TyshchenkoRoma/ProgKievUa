@@ -1,4 +1,7 @@
-package ua.kiev.prog;
+package ua.kiev.prog.controller;
+
+import ua.kiev.prog.Message;
+import ua.kiev.prog.MessageList;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

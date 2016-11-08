@@ -31,7 +31,7 @@ public class Train {
         this.from = from;
     }
 
-    @XmlAttribute
+   // @XmlAttribute
     public int getId() {
         return id;
     }
@@ -46,7 +46,7 @@ public class Train {
         return from;
     }
 
-    @XmlElement
+   // @XmlElement
     public void setFrom(String from) {
         this.from = from;
     }
@@ -55,21 +55,23 @@ public class Train {
         return to;
     }
 
-    //  @XmlElement
+
     public void setTo(String to) {
         this.to = to;
     }
 
+    @XmlElement
+    @XmlJavaTypeAdapter(DateConverter.class)
     public Date getData() {
         return data;
     }
 
-    @XmlElement
-    @XmlJavaTypeAdapter(DateConverter.class)
+
     public void setDate(Date data) {
         this.data = data;
     }
-
+    @XmlElement
+    @XmlJavaTypeAdapter(DateConverter.class)
     public Date getDeparture() {
         return departure;
     }
@@ -96,6 +98,6 @@ public class Train {
                 ", to='" + to + '\'' +
                 ", data=" + data +
                 ", time='" + departure + '\'' +
-                '}';
+                "}\n";
     }
 }
