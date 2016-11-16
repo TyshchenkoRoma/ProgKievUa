@@ -8,10 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/**
- * Created by roman on 08.11.16.
- */
-@WebServlet(name = "LoginServlet")
+
+@WebServlet(name = "LoginServlet",  urlPatterns={"/login"})
 public class LoginServlet extends HttpServlet {
     private static String LOGIN = "admin";
     private static String PASS = "admin";
