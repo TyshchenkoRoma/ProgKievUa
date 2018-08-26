@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+// test commit from 26.08.18
 public class LoginServlet extends javax.servlet.http.HttpServlet {
 Person person;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
