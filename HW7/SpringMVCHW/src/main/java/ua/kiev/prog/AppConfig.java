@@ -21,7 +21,7 @@ public class AppConfig {
         resolver.setOrder(1);
         return resolver;
     }
-
+ // фывафыуа
     @Bean
     public CommonsMultipartResolver multipartResolver() {
         return new CommonsMultipartResolver();
